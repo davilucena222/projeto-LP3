@@ -1,0 +1,5 @@
+<h1>Nova Conta</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.contas_path(@conn, :create)) %>
+
+<span><%= link "Voltar", to: Routes.contas_path(@conn, :index) %></span>

@@ -1,0 +1,31 @@
+<h1>Listagem de Contas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Número</th>
+      <th>Titular</th>
+      <th>Saldo</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for contas <- @contas do %>
+    <tr>
+      <td><%= contas.numero %></td>
+      <td><%= contas.titular %></td>
+      <td><%= contas.saldo %></td>
+
+      <td>
+        <span><%= link "Mostrar", to: Routes.contas_path(@conn, :show, contas) %></span>
+        <span><%= link "Atualizar", to: Routes.contas_path(@conn, :edit, contas) %></span>
+        <span><%= link "Deletar", to: Routes.contas_path(@conn, :delete, contas), method: :delete, data: [confirm: "Você tem certeza que deseja deletar?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Nova Conta", to: Routes.contas_path(@conn, :new) %></span>
+<span><%= link "Página Inicial", to: "http://localhost:4906/" %></span>

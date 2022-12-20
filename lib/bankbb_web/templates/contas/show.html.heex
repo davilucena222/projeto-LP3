@@ -1,0 +1,23 @@
+<h1>Informações da Conta</h1>
+
+<ul>
+
+  <li>
+    <strong>Número:</strong>
+    <%= @contas.numero %>
+  </li>
+
+  <li>
+    <strong>Titular:</strong>
+    <%= @contas.titular %>
+  </li>
+
+  <li>
+    <strong>Saldo:</strong>
+    <%= @contas.saldo %>
+  </li>
+
+</ul>
+
+<span><%= link "Atualizar", to: Routes.contas_path(@conn, :edit, @contas) %></span> |
+<span><%= link "Voltar", to: Routes.contas_path(@conn, :index) %></span>
